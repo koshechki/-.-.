@@ -1,5 +1,8 @@
+//library for finding length of vector z
+
 #include <iostream>
 #include <iosfwd>
+#include <cmath>
 
 struct Rdec2D1 {
     double r = 0.0;
@@ -21,7 +24,7 @@ int main()
     Rdec2D1 z = {4, 3};
     Rdec2D1 z0 = {0, 0};
     std::cout << "z = (" << z.r << ", " << z.ph << ")" << "\n";
-    std::cout << "otvet = " << (z - z0).x << "\n";
+    std::cout << "otvet = " << sqrt((z - z0).x) << "\n";
 }
 
 std::ostream& operator << (std::ostream& ostrm,const Rdec2D1& z) {
