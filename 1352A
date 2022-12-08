@@ -1,0 +1,36 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+    int t(0); // t - kolichestvo naborov
+    cin >> t;
+    for (int i(1); i <= t; ++i) {
+        int k(0); // k - chislo, kotoroe nuzhno razlozhit na chisla
+        cin >> k;
+        int m(0);
+        int g(0); // g - kolchestvo razriadov
+        m = k;
+        int r(0); // r - kolichestvo kruglih chisel
+        while (m > 0) {
+            if (m % 10 != 0) {
+                r += 1;
+                g += 1;
+                m = m / 10;
+            }
+            else {
+                m = m / 10;
+                g += 1;
+            }
+        }
+        cout << r << endl;
+        int s(0);
+        s = g;
+        for (int s(g); s > 0; s = s - 1) {
+            if (int (k / pow(10, (s - 1))) != 0) {
+                cout << int (k / pow(10, (s - 1))) * pow(10, (s - 1)) << " ";
+                k = k - int (k / pow(10, (s - 1))) * pow(10, (s - 1));
+            }
+        }
+        cout << endl;
+    }
+}
