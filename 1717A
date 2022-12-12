@@ -1,0 +1,14 @@
+#include <iostream>
+int main()
+{
+    int t;
+    std::cin >> t;
+    for (int i(0); i < t; i++) {
+        int n;
+        std::cin >> n;
+        int result;
+        result = n + 2 * (n / 2) + 2 * (n / 3);
+        std::cout << result << "\n";
+    }
+    return 0;
+}
