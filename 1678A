@@ -1,0 +1,41 @@
+#include <iostream>
+#include <vector>
+int main()
+{
+    int t;
+    std::cin >> t;
+    for (int i(0); i < t; i++) {
+        int n;
+        std::cin >> n;
+        std::vector<int> arr(n);
+        int kol_vo_0(0);
+        int result(0);
+        for (int j(0); j < n; j++) {
+            std::cin >> arr[j];
+            if (arr[j] == 0) {
+                kol_vo_0 += 1;
+            }
+        }
+        if (kol_vo_0 != 0) {
+            result = n - kol_vo_0;
+        }
+        else {
+            int kol_vo_razn(0);
+            for (int j(0); j < n - 1; j++) {
+                for (int k(j + 1); k < n; k++) {
+                    if (arr[j] == arr[k]) {
+                        result = n;
+                    }
+                    else {
+                        kol_vo_razn += 1;
+                    }
+                }
+            }
+            if (kol_vo_razn == n * (n - 1) / 2) { // количество различных пар равно количеству всех пар
+                result = n + 1;
+            }
+        }
+        std::cout << result << "\n";
+    }
+    return 0;
+}
